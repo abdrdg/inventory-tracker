@@ -5,7 +5,13 @@ import os
 class DB:
     def __init__(self):
         load_dotenv()
-        self.con=conn.connect(host=os.getenv('DB_HOST'), database=os.getenv('DB_SCHEMA'), user=os.getenv('DB_USER'), password=os.getenv('DB_PASSWORD'))
+        self.con=conn.connect(
+            host=os.getenv('DB_HOST'), 
+            database=os.getenv('DB_SCHEMA'), 
+            user=os.getenv('DB_USER'), 
+            password=os.getenv('DB_PASSWORD')
+            )
+        
         if self.con.is_connected():
             print("Connection successful")
         else:
